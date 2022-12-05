@@ -132,9 +132,9 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-function getRandom(characterArray) {
-  const randomCharacter = Math.floor(Marth.random() * characterArray.length);
-  return characterArray[randomCharacter];
+function getRandom(inputArray) {
+  const randomCharacter = Math.floor(Math.random() * inputArray.length);
+  return inputArray[randomCharacter];
 }
 
 // Function to generate password with user input
@@ -161,8 +161,12 @@ alert("Please answer the following five questions about your password length and
 var passLength = length();
 alert("You chose " + passLength + " characters.");
 var characterArray = charType();
+var password = [];
 for (var i=0; i<passLength.length; i++){
- var password = [];
- var passwordCharacter[i]= getRandom();
+ var passwordCharacter= getRandom(characterArray);
  password = password.concat(passwordCharacter[i]);
 }
+
+console.log(passLength)
+console.log(characterArray)
+console.log(password)
