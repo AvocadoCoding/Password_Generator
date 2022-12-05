@@ -96,7 +96,8 @@ function charType() {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  alert("Welcome to password generator! Please click 'OK' to continue.");
+  alert("Please answer the following five questions about your password length and the type of characters you want to include in it (Lowercase, Uppercase, Numeric, Special Characters).");
 }
 
 // Function for getting a random element from an array
@@ -123,3 +124,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
+getPasswordOptions();
