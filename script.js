@@ -88,6 +88,19 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// Function to check user input for password length
+function length() {
+  let userInput = prompt("Choose a password length of at least 10 characters but no more than 64.");
+
+  if (userInput > 9 && userInput < 65) {
+  var passwordLength = userInput;
+  console.log(passwordLength);
+  return passwordLength;
+  } else {
+  alert("Incorrect entry. Please choose a value of at least 10 but no more than 64.");
+  length();
+  }
+}
 
 // Function for user character selection
 function charType() {
@@ -98,6 +111,9 @@ function charType() {
 function getPasswordOptions() {
   alert("Welcome to password generator! Please click 'OK' to continue.");
   alert("Please answer the following five questions about your password length and the type of characters you want to include in it (Lowercase, Uppercase, Numeric, Special Characters).");
+  length();
+  var passLength= length();
+  alert("You chose " + passLength + " characters. ");
 }
 
 // Function for getting a random element from an array
