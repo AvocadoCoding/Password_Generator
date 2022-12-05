@@ -106,7 +106,7 @@ function length() {
 // Function for user character selection
 function charType() {
   var charArray=[];
-  var zero={};
+  var zero=[];
   let lowercase = confirm("Do you want to include lowercase characters in your password?");
   if (lowercase = true){charArray= charArray.concat(lowerCasedCharacters);
   }else{charArray= charArray.concat(zero)}
@@ -125,15 +125,16 @@ function charType() {
   charType();
   }
   else{return charArray;}
-  }
+}
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
+function getRandom(characterArray) {
+  const randomCharacter = Math.floor(Marth.random() * characterArray.length);
+  return characterArray[randomCharacter];
 }
 
 // Function to generate password with user input
@@ -157,6 +158,11 @@ generateBtn.addEventListener('click', writePassword);
 
 alert("Welcome to password generator! Please click 'OK' to continue.");
 alert("Please answer the following five questions about your password length and the type of characters you want to include in it (Lowercase, Uppercase, Numeric, Special Characters).");
-length();
-//alert("You chose " + length() + " characters. ");
-charType();
+var passLength = length();
+alert("You chose " + passLength + " characters.");
+var characterArray = charType();
+for (var i=0; i<passLength.length; i++){
+ var password = [];
+ var passwordCharacter[i]= getRandom();
+ password = password.concat(passwordCharacter[i]);
+}
