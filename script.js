@@ -102,10 +102,30 @@ function length() {
   }
 }
 
+
 // Function for user character selection
 function charType() {
-
-}
+  var charArray=[];
+  var zero={};
+  let lowercase = confirm("Do you want to include lowercase characters in your password?");
+  if (lowercase = true){charArray= charArray.concat(lowerCasedCharacters);
+  }else{charArray= charArray.concat(zero)}
+  let uppercase = confirm("Do you want to include uppercase characters in your password?");
+  if (uppercase = true){charArray= charArray.concat(upperCasedCharacters);
+  }else{charArray= charArray.concat(zero)}
+  let numeric = confirm("Do you want to include numeric characters in your password?");
+  if (numeric = true){charArray= charArray.concat(numericCharacters);
+  }else{charArray= charArray.concat(zero)}
+  let special = confirm("Do you want to include special characters in your password?");
+  if (special = true){charArray= charArray.concat(specialCharacters);
+  }else{charArray= charArray.concat(zero)}
+  
+  if (charArray.length === 0){
+  alert("You must choose at least one character type, please select again.");
+  charType();
+  }
+  else{return charArray;}
+  }
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -114,6 +134,7 @@ function getPasswordOptions() {
   length();
   var passLength= length();
   alert("You chose " + passLength + " characters. ");
+  var Characters = charType();
 }
 
 // Function for getting a random element from an array
@@ -141,3 +162,5 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 getPasswordOptions();
+console.log(passwordLength);
+console.log(charArray);
