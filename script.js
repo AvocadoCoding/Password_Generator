@@ -102,10 +102,10 @@ function length() {
 }
 
 
-// Function for user character selection, can select from lowercase, uppercase, numeric and special cahracter arrays
+// Function for user character selection, can select from lowercase, uppercase, numeric and special character arrays
 function charType() {
-  var charArray=[];
-  var zero=[];
+  let charArray=[];
+  let zero=[];
 
   function lowercaseFunc() {
     let lowercase = prompt("Do you want to include lowercase characters in your password? Please answer 'yes' or 'no'.");
@@ -170,7 +170,7 @@ function charType() {
   
   if (charArray.length === 0){
   alert("You must choose at least one character type, please select again.");
-  charType();
+  return charType();
   }
   else{return charArray;}
 }
