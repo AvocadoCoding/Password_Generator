@@ -107,18 +107,67 @@ function length() {
 function charType() {
   var charArray=[];
   var zero=[];
-  let lowercase = confirm("Do you want to include lowercase characters in your password?");
-  if (lowercase = true){charArray= charArray.concat(lowerCasedCharacters);
-  }else{charArray= charArray.concat(zero)}
-  let uppercase = confirm("Do you want to include uppercase characters in your password?");
-  if (uppercase = true){charArray= charArray.concat(upperCasedCharacters);
-  }else{charArray= charArray.concat(zero)}
-  let numeric = confirm("Do you want to include numeric characters in your password?");
-  if (numeric = true){charArray= charArray.concat(numericCharacters);
-  }else{charArray= charArray.concat(zero)}
-  let special = confirm("Do you want to include special characters in your password?");
-  if (special = true){charArray= charArray.concat(specialCharacters);
-  }else{charArray= charArray.concat(zero)}
+
+  function lowercaseFunc() {
+    let lowercase = prompt("Do you want to include lowercase characters in your password? Please answer 'yes' or 'no'.");
+    if (lowercase === "yes") {
+      charArray= charArray.concat(lowerCasedCharacters);
+      return charArray;
+    } else if (lowercase === "no"){
+      charArray= charArray.concat(zero);
+      return charArray;
+    } else {
+      alert("Error, please enter 'yes' or 'no'.");
+      lowercaseFunc();
+    }
+  }
+  
+  function uppercaseFunc() {
+    let uppercase = prompt("Do you want to include uppercase characters in your password? Please answer 'yes' or 'no'.");
+    if (uppercase === "yes") {
+      charArray= charArray.concat(upperCasedCharacters);
+      return charArray;
+    } else if (uppercase === "no"){
+      charArray= charArray.concat(zero);
+      return charArray;
+    } else {
+      alert("Error, please enter 'yes' or 'no'.");
+      uppercaseFunc();
+    }
+  }
+
+  function numericFunc() {
+    let numeric = prompt("Do you want to include numeric characters in your password? Please answer 'yes' or 'no'.");
+    if (numeric === "yes") {
+      charArray= charArray.concat(numericCharacters);
+      return charArray;
+    } else if (numeric === "no"){
+      charArray= charArray.concat(zero);
+      return charArray;
+    } else {
+      alert("Error, please enter 'yes' or 'no'.");
+      numericFunc();
+    }
+  }
+  
+  function specialFunc() {
+    let special = prompt("Do you want to include special characters in your password? Please answer 'yes' or 'no'.");
+    if (special === "yes") {
+      charArray= charArray.concat(specialCharacters);
+      return charArray;
+    } else if (special === "no"){
+      charArray= charArray.concat(zero);
+      return charArray;
+    } else {
+      alert("Error, please enter 'yes' or 'no'.");
+      specialFunc();
+    }
+  }
+
+  lowercaseFunc();
+  uppercaseFunc();
+  numericFunc();
+  specialFunc();
   
   if (charArray.length === 0){
   alert("You must choose at least one character type, please select again.");
