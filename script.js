@@ -133,7 +133,8 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(inputArray) {
-  const randomCharacter = Math.floor(Math.random() * inputArray.length);
+  var randomCharacter = Math.floor(Math.random() * inputArray.length);
+  console.log(inputArray[randomCharacter]);
   return inputArray[randomCharacter];
 }
 
@@ -162,9 +163,9 @@ var passLength = length();
 alert("You chose " + passLength + " characters.");
 var characterArray = charType();
 var password = [];
-for (var i=0; i<passLength.length; i++){
+for (var i=0; i < passLength; i++){
  var passwordCharacter= getRandom(characterArray);
- password = password.concat(passwordCharacter[i]);
+ password = password.concat(passwordCharacter);
 }
 
 console.log(passLength)
