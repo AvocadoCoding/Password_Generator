@@ -102,7 +102,7 @@ function length() {
 }
 
 
-// Function for user character selection
+// Function for user character selection, can select from lowercase, uppercase, numeric and special cahracter arrays
 function charType() {
   var charArray=[];
   var zero=[];
@@ -176,29 +176,17 @@ function charType() {
 }
 
 
-// Function for getting a random element from an array
+// Function to get a random element from an array
 function getRandom(inputArray) {
   var randomCharacter = Math.floor(Math.random() * inputArray.length);
   console.log(inputArray[randomCharacter]);
   return inputArray[randomCharacter];
 }
 
-// Function to generate password with user input
-function generatePassword() {
-
-}
-
-// Write password to the #password input
-function writePassword() {
-  var passwordFinal = password;
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = passwordFinal;
-}
 
 
-
-// Function to prompt user for password options
+// Function to prompt user, link password length and character selection functions, concatenate
+// password from random character selection function and output created password onto screen.
 function getPasswordOptions() {
 alert("Welcome to password generator! Please click 'OK' to continue.");
 alert("Please answer the following five questions about your password length and the type of characters you want to include in it (Lowercase, Uppercase, Numeric, Special Characters).");
@@ -210,14 +198,16 @@ for (var i=0; i < passLength; i++){
  var passwordCharacter= getRandom(characterArray);
  password = password.concat(passwordCharacter);
 }
-console.log(passLength)
-console.log(characterArray)
-console.log(password)
-return writePassword()
+console.log(passLength);
+console.log(characterArray);
+console.log(password);
+var passwordText = document.querySelector('#password');
+
+passwordText.value = password;
 }
 
-// Get references to the #generate element (ie. the generate id in the HTML file)
+// Varaible created for button using the #generate element
 var generateBtn = document.querySelector('#generate');
 
-// Add event listener to generate button
+// Add event listener to generate button, when the button is clicked the initial user prompt function begins
 generateBtn.addEventListener('click', getPasswordOptions);
