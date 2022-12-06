@@ -10,7 +10,7 @@ between 10 and 64 characters. If the user enters an incorrect value/ input, or d
 
 This application allows a user to quickly randomly generate a password by selecting only the five aforementiond parameters.
 
-## Screenshot of console output
+## Screenshot of console outputs
 
 
 ## Deployed webpage location
