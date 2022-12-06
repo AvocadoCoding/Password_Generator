@@ -148,10 +148,10 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var passwordFinal = password;
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = passwordFinal;
 }
 
 // Add event listener to generate button
@@ -167,6 +167,7 @@ for (var i=0; i < passLength; i++){
  var passwordCharacter= getRandom(characterArray);
  password = password.concat(passwordCharacter);
 }
+writePassword()
 
 console.log(passLength)
 console.log(characterArray)
