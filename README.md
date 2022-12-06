@@ -11,6 +11,9 @@ between 10 and 64 characters. If the user enters an incorrect value/ input, or d
 This application allows a user to quickly randomly generate a password by selecting only the five aforementiond parameters.
 
 ## Screenshot of console outputs
+![image](https://user-images.githubusercontent.com/116954089/205936752-7a9cac57-6dc4-4422-bb53-3fb3689a39ce.png)
+![image](https://user-images.githubusercontent.com/116954089/205936823-c936a8b0-583b-4c41-b54b-0a607e1d3a68.png)
+![image](https://user-images.githubusercontent.com/116954089/205936883-4466f035-b099-4d5d-b7b0-31dc35e7fa34.png)
 
 
 ## Deployed webpage location
