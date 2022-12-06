@@ -175,9 +175,6 @@ function charType() {
   else{return charArray;}
 }
 
-// Function to prompt user for password options
-function getPasswordOptions() {
-}
 
 // Function for getting a random element from an array
 function getRandom(inputArray) {
@@ -191,9 +188,6 @@ function generatePassword() {
 
 }
 
-// Get references to the #generate element (ie. the generate id in the HTML file)
-var generateBtn = document.querySelector('#generate');
-
 // Write password to the #password input
 function writePassword() {
   var passwordFinal = password;
@@ -202,9 +196,10 @@ function writePassword() {
   passwordText.value = passwordFinal;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
 
+
+// Function to prompt user for password options
+function getPasswordOptions() {
 alert("Welcome to password generator! Please click 'OK' to continue.");
 alert("Please answer the following five questions about your password length and the type of characters you want to include in it (Lowercase, Uppercase, Numeric, Special Characters).");
 var passLength = length();
@@ -215,8 +210,14 @@ for (var i=0; i < passLength; i++){
  var passwordCharacter= getRandom(characterArray);
  password = password.concat(passwordCharacter);
 }
-writePassword()
-
 console.log(passLength)
 console.log(characterArray)
 console.log(password)
+return writePassword()
+}
+
+// Get references to the #generate element (ie. the generate id in the HTML file)
+var generateBtn = document.querySelector('#generate');
+
+// Add event listener to generate button
+generateBtn.addEventListener('click', getPasswordOptions);
